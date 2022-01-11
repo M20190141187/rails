@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation Starter Template</title>
+    <%= stylesheet_link_tag "foundation.css" %>
+  </head>
+  <body>
+  <div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">Primeiro Projeto</li>
+  </div>
+  <div class="top-bar-right">
+    <ul class="dropdown menu" data-dropdown-menu>
+        <li><a href="#">Two</a></li>
+      <li><a href="#">Three</a></li>
+      <li>
+        <a href="#">Conta</a>
+        <ul class="menu vertical">
+        <% if model_signed_in? %>
+          <li><%= link_to 'Editar Perfil', edit_model_registration_path%> </li>
+          <li><%= link_to "Logout", destroy_model_session_path, method:  :delete %></li>
+        <% else %>
+          <li><%= link_to "Registrar", new_model_registration_path %> </li>
+          <li><%= link_to "Logar", new_model_session_path, :class => 'navbar-link'  %></li>
+        </ul>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+
+    </ul>
+  </div>
+</div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+    <script src="js/vendor/jquery.js"></script>
+    <%= javascript_include_tag  'jquery'%>
+    <%= javascript_include_tag 'what-input'%>
+    <%= javascript_include_tag  'foundation.min'%>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+  </body>
+</html>
