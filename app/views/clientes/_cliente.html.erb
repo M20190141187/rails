@@ -1,12 +1,16 @@
-<div id="<%= dom_id cliente %>">
-  <p>
-    <strong>Name:</strong>
-    <%= cliente.name %>
-  </p>
-
-  <p>
-    <strong>Datadenascimento:</strong>
-    <%= cliente.datadenascimento %>
-  </p>
-
+  <table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data de nascimento</th>
+      <th width="50"height="30" ></th>
+      <th width="30"height="30"> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= cliente.name %></td>
+      <td><%= cliente.datadenascimento %></td>
+      <td><%= button_to "Apagar", @cliente, method: :delete, class: "button" %></td>
+    </tr>
 </div>

@@ -1,10 +1,10 @@
-<%= form_with(model: cliente) do |form| %>
-  <% if cliente.errors.any? %>
+<%= form_with(model: usuario) do |form| %>
+  <% if usuario.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
 
       <ul>
-        <% cliente.errors.each do |error| %>
+        <% usuario.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
@@ -22,6 +22,6 @@
   </div>
 
   <div>
-    <%= form.submit class:"submit success button"%>
+    <%= form.submit %>
   </div>
 <% end %>

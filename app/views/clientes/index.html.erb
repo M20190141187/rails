@@ -1,14 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<style>
+body {background-color:rgba(230,230,230,255);}
+</style>
+ <div>
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th width="50"></th>
+        <th></th>
+      </tr>
+    </thead>
+        <% @clientes.each do |cliente| %>
+    <tbody>
+        <tr>
+          <td><%= cliente.name %></td>
+          <td><%= cliente.datadenascimento %></td>
+          <td><%= link_to "Editar", edit_cliente_path(cliente.id), class:"button"%> </td>
+          <td><%= button_to "Excluir", cliente, method: :delete,  class: "alert button" %></td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
 
-<h1>Clientes</h1>
+  <br>
 
-<div id="clientes">
-  <% @clientes.each do |cliente| %>
-    <%= render cliente %>
-    <p>
-      <%= link_to "Show this cliente", cliente %>
-    </p>
-  <% end %>
 </div>
-
-<%= link_to "New cliente", new_cliente_path %>
