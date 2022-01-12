@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  datadenascimento: 2022-01-12
+
+two:
+  name: MyString
+  datadenascimento: 2022-01-12
